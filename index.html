@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div class="hero-img"></div>
+<div class="container">
+    <header>
+        <a href="#" class="logo">Your<span>Logo</span></a>
+
+        <nav>
+            <!-- close -->
+            <img src="images/close-circle.svg" alt="close" class="close">
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Colección</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+          
+          </nav>
+          <!-- icono -->
+          <img src="images/toggle.svg"  class="toggle">
+    </header>
+
+
+    <main>
+        <!-- section  -->
+      <section class="hero" id="hero">
+        <h1 class="hero__title">Compra 100% segura</h1>
+        <p class="hero__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+        <img src="images/arrow-down-outline.svg" alt="arrow down" class="down-arrow">
+    </section>
+
+
+    <!-- more info -->
+    <section class="more-info">
+      <div class="feature">
+        <!-- texto -->
+        <div class="content">
+          <p class="title">Flexible</p>
+          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, ipsa quos. A, eligendi inventore.</p>
+        </div>
+        <!-- foto -->
+        <img src="images/img-shoes-2.jpg" alt="shoe two">
+      </div>
+      <div class="feature left">
+        <!-- texto -->
+        <div class="content">
+          <p class="title">Flexible</p>
+          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, ipsa quos. A, eligendi inventore.</p>
+        </div>
+        <!-- foto -->
+        <img src="images/img-shoes-3.jpg" alt="shoe two">
+      </div>
+      <div class="feature">
+        <!-- texto -->
+        <div class="content">
+          <p class="title">Flexible</p>
+          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, ipsa quos. A, eligendi inventore.</p>
+        </div>
+        <!-- foto -->
+        <img src="images/img-shoes-4.jpg" alt="shoe two">
+      </div>
+    </section>  
+    </main>
+</div>
+
+<footer class="container">
+
+   <div class="footer__container">
+      <ul class="footer__nav">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#">Contactanos</a></li>
+        <li><a href="#">Reseñas</a></li>
+      </ul>
+
+      <p class="footer__copyright">&copy;Rinque Franco 2022</p>
+   </div>
+</footer>
+
+
+
+
+
+
+
+  <script>
+
+    const toggle = document.querySelector('.toggle');
+    const close = document.querySelector('.close');
+    const nav = document.querySelector('nav');
+
+    toggle.addEventListener('click',  ()=>{
+      nav.classList.add('open-nav')
+    })
+    close.addEventListener('click',  ()=>{
+      nav.classList.remove('open-nav')
+    })
+
+  </script>
+</body>
+</html>

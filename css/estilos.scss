@@ -1,0 +1,303 @@
+*,::before,::after{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    font-size: 20px;
+}
+
+img{
+    width: 100%;
+}
+.container{
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+body{
+    // margin: 1.5em;
+    background-color: #181818;
+}
+
+.hero-img{
+    position: absolute;
+    top: 0;
+    left:0;
+    background:
+    linear-gradient( rgb( 0 0 0 /60%), rgb( 0 0 0 /60%))
+     ,url('../images/img-shoes-1.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    animation: introLoad  ease 2s forwards;
+
+    @media only screen and (min-width: 920px){
+        width: 50%;
+        height: 500px;
+        right: 0;
+        left: unset;
+    }
+}
+
+@keyframes introLoad {
+    from{ clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);}
+    to{ clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);}
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span{
+        color: hsl(248, 53%, 58%);
+    }
+
+    .logo{
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    .toggle{
+        width: 40px;
+        height: 40px;
+        @media only screen and (min-width : 920px){
+            display: none;
+        }
+    }
+    nav{
+       position: fixed;
+       top: 0;
+       right: 0;
+       background-color: #f4f4f4;
+       height: 100vh;
+       width: 50%;
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+       flex-direction: column;
+       padding: 10px;
+       transform: translateX(100%);
+       transition: transform ease .3s;
+       z-index: 999;
+
+       @media only screen and (min-width : 920px){
+
+            transform: translateX(0);
+            width: auto;
+            height: auto;
+            position: unset;
+            background:  transparent;
+            display: block;
+        }
+
+       .close{
+            width: 2rem;
+            align-self: flex-end;
+            cursor: pointer; 
+
+            @media only screen and (min-width : 920px){
+                display: none;
+            }
+       }
+
+       ul{
+        padding: 0;
+        text-transform: uppercase;
+        width: 100%;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        @media only screen and (min-width : 920px){
+            display: flex;
+        }
+        
+
+        a{
+            font-size: 1.2rem;
+            margin: 30px 0;
+            padding: 10px;
+            display: block;
+            color: #181818;
+
+            &:hover{
+                background-color: rgb(205, 205, 205);
+            }
+
+            @media only screen and (min-width : 920px){
+                color: #f4f4f4;
+
+                &:hover{
+                    background-color: #181818;
+                }
+            }
+        }
+       }
+    }
+}
+
+section.hero{
+
+    color: white;
+    height: 90vh;  
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+
+    .hero__title{
+        font-size: 2rem;
+        margin-top: 2rem;
+        line-height: .9;
+        color: hsl(248, 53%, 58%);
+    }
+    .down-arrow{
+        width: 2rem;
+        position: absolute;
+        bottom:5rem;
+        left:0;
+        z-index: 2;
+        animation : moveArrow ease 1s infinite alternate-reverse;
+
+        @media only screen and (min-width: 920px){
+            position: unset;
+            margin-top: 200px;
+            width: 40px;
+        }
+    }
+
+    @media only screen and (min-width: 992px){
+        height: auto;
+        width: 40%;
+        margin-bottom: 200px;
+    }
+}
+// animaion flecha 
+@keyframes moveArrow {
+    from{ transform: translateY(5px)}
+    to{ transform: translateY(-5px)}
+}
+
+section.more-info{
+
+    padding: 70px 0;
+    img{
+        object-fit: cover;
+        height: 15rem;
+        margin: 30px 0;
+
+        @media only screen and (min-width: 992px){
+            width: 25em;
+        }
+    }
+    .title{
+        font-weight: bold;
+        font-size: 2rem;
+        color: hsl(248, 53%, 58%);
+    }
+    .description {
+        line-height: 1.2rem;
+        color: #f4f4f4;
+    }
+
+    .feature {
+        @media only screen and (min-width: 992px){
+            display: grid;
+            grid-template-columns: repeat(2,auto);
+            justify-content: space-around;
+            gap: 3rem;
+            margin: 50px 0;
+        }
+
+       
+    }
+
+    .content{
+        @media only screen and (min-width: 992px){
+            text-align: right;
+            width: 25rem;
+        }
+    }
+
+    .feature.left {
+        @media only screen and (min-width: 992px){
+            grid-template-areas: 
+            "left right";
+
+            .content{
+                text-align: left;
+            }
+        }
+
+        img{
+            @media only screen and (min-width: 992px){
+                grid-area: left;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width : 680px){
+    body{
+        margin: 0 5rem;
+    }
+}
+
+
+
+// js
+
+.open-nav{
+    transform: translateX(0);
+}
+
+.footer__container{
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,400px));
+    grid-auto-rows: repeat(2,100px);
+    text-align: center;
+    gap: 40px;
+    color: #f4f4f4;
+
+    @media only screen and (min-width : 992px){
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .footer__nav{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        @media only screen and (min-width : 992px){
+            flex-direction: row;
+        }
+
+        a{
+            margin: 20px 0;
+            color: #b5b5b5;
+        }
+    }
+
+    .footer__copyright{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+

@@ -1,0 +1,311 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  font-size: 20px;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+body {
+  background-color: #181818;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/img-shoes-1.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  -webkit-animation: introLoad ease 2s forwards;
+          animation: introLoad ease 2s forwards;
+}
+@media only screen and (min-width: 920px) {
+  .hero-img {
+    width: 50%;
+    height: 500px;
+    right: 0;
+    left: unset;
+  }
+}
+
+@-webkit-keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+  }
+}
+
+@keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header span {
+  color: hsl(248deg, 53%, 58%);
+}
+header .logo {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+header .toggle {
+  width: 40px;
+  height: 40px;
+}
+@media only screen and (min-width: 920px) {
+  header .toggle {
+    display: none;
+  }
+}
+header nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f4f4f4;
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  transform: translateX(100%);
+  transition: transform ease 0.3s;
+  z-index: 999;
+}
+@media only screen and (min-width: 920px) {
+  header nav {
+    transform: translateX(0);
+    width: auto;
+    height: auto;
+    position: unset;
+    background: transparent;
+    display: block;
+  }
+}
+header nav .close {
+  width: 2rem;
+  align-self: flex-end;
+  cursor: pointer;
+}
+@media only screen and (min-width: 920px) {
+  header nav .close {
+    display: none;
+  }
+}
+header nav ul {
+  padding: 0;
+  text-transform: uppercase;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+@media only screen and (min-width: 920px) {
+  header nav ul {
+    display: flex;
+  }
+}
+header nav ul a {
+  font-size: 1.2rem;
+  margin: 30px 0;
+  padding: 10px;
+  display: block;
+  color: #181818;
+}
+header nav ul a:hover {
+  background-color: rgb(205, 205, 205);
+}
+@media only screen and (min-width: 920px) {
+  header nav ul a {
+    color: #f4f4f4;
+  }
+  header nav ul a:hover {
+    background-color: #181818;
+  }
+}
+
+section.hero {
+  color: white;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section.hero .hero__title {
+  font-size: 2rem;
+  margin-top: 2rem;
+  line-height: 0.9;
+  color: hsl(248deg, 53%, 58%);
+}
+section.hero .down-arrow {
+  width: 2rem;
+  position: absolute;
+  bottom: 5rem;
+  left: 0;
+  z-index: 2;
+  animation: moveArrow ease 1s infinite alternate-reverse;
+}
+@media only screen and (min-width: 920px) {
+  section.hero .down-arrow {
+    position: unset;
+    margin-top: 200px;
+    width: 40px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  section.hero {
+    height: auto;
+    width: 40%;
+    margin-bottom: 200px;
+  }
+}
+
+@-webkit-keyframes moveArrow {
+  from {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes moveArrow {
+  from {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+section.more-info {
+  padding: 70px 0;
+}
+section.more-info img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 15rem;
+  margin: 30px 0;
+}
+@media only screen and (min-width: 992px) {
+  section.more-info img {
+    width: 25em;
+  }
+}
+section.more-info .title {
+  font-weight: bold;
+  font-size: 2rem;
+  color: hsl(248deg, 53%, 58%);
+}
+section.more-info .description {
+  line-height: 1.2rem;
+  color: #f4f4f4;
+}
+@media only screen and (min-width: 992px) {
+  section.more-info .feature {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-around;
+    gap: 3rem;
+    margin: 50px 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  section.more-info .content {
+    text-align: right;
+    width: 25rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  section.more-info .feature.left {
+    grid-template-areas: "left right";
+  }
+  section.more-info .feature.left .content {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 992px) {
+  section.more-info .feature.left img {
+    grid-area: left;
+  }
+}
+
+@media only screen and (min-width: 680px) {
+  body {
+    margin: 0 5rem;
+  }
+}
+.open-nav {
+  transform: translateX(0);
+}
+
+.footer__container {
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+  grid-auto-rows: repeat(2, 100px);
+  text-align: center;
+  gap: 40px;
+  color: #f4f4f4;
+}
+@media only screen and (min-width: 992px) {
+  .footer__container {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.footer__container .footer__nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media only screen and (min-width: 992px) {
+  .footer__container .footer__nav {
+    flex-direction: row;
+  }
+}
+.footer__container .footer__nav a {
+  margin: 20px 0;
+  color: #b5b5b5;
+}
+.footer__container .footer__copyright {
+  height: 100%;
+  width: 100%;
+}/*# sourceMappingURL=estilos.css.map */
